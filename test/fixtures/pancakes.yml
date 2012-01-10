@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  polewa: MyString
+  ocena: 1.5
+  cena: 1.5
+
+two:
+  polewa: MyString
+  ocena: 1.5
+  cena: 1.5
