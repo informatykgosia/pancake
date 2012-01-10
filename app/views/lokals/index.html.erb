@@ -1,0 +1,30 @@
+<!Doctype>
+<html>
+<body>
+<h1>Ale czadowe lokale!</h1>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<p> ostatnio dodane lokale </p>
+
+<% @lokals.each do |lokal| %>
+  <div>
+	<div><%= lokal.nazwa %> </div>
+  </div>
+
+<% end %>
+
+<br/>
+
+<%= link_to "Dodaj lokal", new_lokal_path %>
+</body>
+</html>
+
+
+
+
+
+
+
