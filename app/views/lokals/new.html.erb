@@ -1,2 +1,20 @@
-<h1>Lokals#new</h1>
-<p>Find me in app/views/lokals/new.html.erb</p>
+<h1> Dodaj nowy lokal </h1>
+	<%= form_for @lokal  do |f| %>
+		<% if @lokal.errors.any? %>
+		<ul>
+			<% @lokal.errors.full_messages.each do |msg| %>
+				<li><%= msg %> </li>
+			<% end %>
+		</ul>
+		<% end %>
+
+		<p>
+			<%= f.label :nazwa, "Nazwa lokalu:" %> <br/>
+			<%= f.text_field :nazwa %>
+		</p>
+		<p>
+			<%= f.label :adres, "Adres:" %> <br/>
+			<%= f.text_field, :adres %>
+		</p>
+		<%= f.submit "Dodaj!" %>
+		<% end %>	
