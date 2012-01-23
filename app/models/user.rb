@@ -1,14 +1,8 @@
 class User < ActiveRecord::Base
-attr_accessible (:imie, :nazwisko, :e_mail, :adres)
+attr_protected :admin
 
-email_check = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
-validates (:imie, :presence => true,
-          :length => { :minimum => 3 })
-validates (:nazwisko, :presence => true,
-          :length => { :minimum => 3 })
-validates (:e_mail, :presence => true,
-                     :format => { :with => email_check },
-                      :uniqueness => { :case_sensitive => false } )
-
+acts_as_authentic do |config|
+  config.crypted_password_field = :crypted_password
+  config.require_password_confirmation = true
+end
 end

@@ -4,6 +4,7 @@ class CreateLokals < ActiveRecord::Migration
       t.string :nazwa
       t.string :adres
       t.float :ocena
+      t.string :link_zdjecie
 
       t.timestamps
     end
