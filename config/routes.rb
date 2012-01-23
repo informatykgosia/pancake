@@ -1,4 +1,14 @@
 Projekt::Application.routes.draw do
+  resources :users, :only => [:new, :create, :edit, :update]
+
+ # get "users/new"
+
+ # get "users/create"
+
+ #get "users/edit"
+
+ # get "users/update"
+
  # get "lokals/index"
 
   #get "lokals/new"

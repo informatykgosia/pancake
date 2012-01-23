@@ -1,0 +1,20 @@
+<%= form_for @user do |a| %>
+  <!--byki-->
+  <p>
+    <%= a.label :login %><br/>
+    <%= a.text_field :login %>
+  </p>
+  <p>
+    <%= a.label :email %>><br/>
+    <%= a.text_field :email %>
+  </p>
+  <p>
+    <%= a.label :password %><br/>
+    <%= a.password_field :password %>
+  </p>
+  <p>
+    <%= a.label :password_confirmation %><br/>
+    <%= a.password_field :password_confirmation %>
+  </p>
+  <p><%= a.submit "dajesz!" %></p>
+<% end %>
