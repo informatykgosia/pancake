@@ -4,6 +4,16 @@ body{
 /*	background-image: url(<%= asset_path 'stripe.png' %>);	*/
 	font-family: Trebuchet MS, Arial, sans-serif;
 	height:100%;
+	margin-top:0px;
+}
+.top{
+position:absolute;
+text-align:right;
+width:100%;
+margin: auto;
+background-color:#eabd40;
+height:50px;
+z-index:1;
 }
 
 .wrapper{
@@ -11,6 +21,7 @@ body{
 	width:990px;
 	margin: 0px auto;
 	height:100%;
+	top:30px;
 }
 section{
 	background-color: #FFFFFF;
@@ -29,24 +40,39 @@ left:-1px;
 }
 img.logo{
 position:absolute;
+z-index:2;
 }
 ul.nav{
 display:block;
 list-style:none;
 position:absolute;
 left:320px;
+top:0px;
 }
 ul.nav li{
-width:150px;
+min-width:140px;
 height:200px;
-margin-right:3px;
+margin-right:6px;
 display:block;
 float:left;
+border-bottom-left-radius:20px;
+border-bottom-right-radius:20px;
+border: 2px dashed #f2dd72;
+border-top:none;
+}
+ul.nav li:hover { 
+background-color:#eabd40;
+border: 2px dashed #69a798 ;
+border-top:none;
+}
+li.wider{
+width:170px;
 }
 img.nav{
 margin: auto;
 position:absolute;
 bottom:10px;
+margin-left:10px;
 }
 
 footer{
