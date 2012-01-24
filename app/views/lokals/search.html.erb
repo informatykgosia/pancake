@@ -1,0 +1,7 @@
+<%= form_for @search do |s| %>
+  <p>
+    <%= s.label :search %><br/>
+    <%= s.text_field :search %>
+  </p>
+  <p><%= s.submit "szukaj" %></p>
+<% end %>

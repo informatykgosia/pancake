@@ -10,6 +10,9 @@ Projekt::Application.routes.draw do
   resource :user_session, :only => [:new, :create, :destroy]
   root :to => "lokals#index"
 
+  resources :search, :only => [:search]
+  root :to => "lokals#search"
+
   # get "users/new"
 
  # get "users/create"
@@ -80,7 +83,7 @@ Projekt::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-resources :lokals, :only => [:index, :new, :create]
+resources :lokals, :only => [:index, :new, :create, :search]
 
 root :to => "lokals#index"
 end
