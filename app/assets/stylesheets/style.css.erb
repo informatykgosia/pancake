@@ -5,9 +5,10 @@ body{
 	font-family: Trebuchet MS, Arial, sans-serif;
 	height:100%;
 	margin-top:0px;
+
 }
 .top{
-position:absolute;
+position:relative;
 text-align:right;
 width:100%;
 margin: auto;
@@ -24,30 +25,32 @@ z-index:1;
 	top:30px;
 }
 section{
+	
 	background-color: #FFFFFF;
-
 	padding:10px;
-	position:absolute;
-	top:360px;
+	position:relative;
+	margin-top:320px;
 	width:100%;
+	min-height:450px;
 	border-bottom-left-radius:15px;
 	border-bottom-right-radius:15px;
 }
 img.ornament{
 position:absolute;
-top:-13px;
-left:-1px;
+top:-15px;
+left:0px;
 }
 img.logo{
-position:absolute;
+position:relative;
 z-index:2;
+margin-top:-40px;
 }
 ul.nav{
 display:block;
 list-style:none;
-position:absolute;
+position:relative;
 left:320px;
-top:0px;
+margin-top:-350px;
 }
 ul.nav li{
 min-width:140px;
@@ -71,7 +74,7 @@ width:170px;
 img.nav{
 margin: auto;
 position:absolute;
-bottom:10px;
+bottom:-200px;
 margin-left:10px;
 }
 
@@ -81,5 +84,41 @@ height:70px;
 width:100%;
 padding-top:30px;
 text-align:center;
-position:absolute;
-bottom:0px;}
+position:relative;
+bottom:0px;
+margin-top:40px;
+}
+
+.form{
+position:relative;
+background-color:#c4d37a;
+width:400px;
+margin-left:280px;
+padding:10px;
+margin-top:10px;
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+}
+input{
+height:20px;
+padding:5px;
+border:none;
+border-radius:5px;
+}
+input.zarejestruj{
+	height:93px;
+	width:420px;
+	background-image: url(<%= asset_path 'zarejestruj.png' %>);	
+	border-radius:5px;
+	background-color:transparent;
+	border: 0;
+	cursor:pointer;
+	cursor:hand;
+	position:absolute;
+	bottom:-90px;
+	left:0px;
+	
+}
+input.zarejestruj:hover{
+
+}
