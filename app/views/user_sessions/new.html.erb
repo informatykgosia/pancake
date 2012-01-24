@@ -1,0 +1,12 @@
+<%= form_for @user_session do |a| %>
+  <!--byki -->
+  <p>
+    <%= a.label :login %><br/>
+   <%= a.text_field :login %>
+  </p>
+  <p>
+    <%= a.label :password %><br/>
+    <%= a.password_field :password %>
+  </p>
+  <p><%= a.submit "Dzialaj!" %></p>
+<% end %>
