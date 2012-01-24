@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120110225101) do
+ActiveRecord::Schema.define(:version => 20120123182610) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "nazwa"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20120110225101) do
     t.string   "nazwa"
     t.string   "adres"
     t.float    "ocena"
-    t.string   "link_zdjecie"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,14 +40,14 @@ ActiveRecord::Schema.define(:version => 20120110225101) do
     t.string   "login"
     t.string   "imie"
     t.string   "nazwisko"
-    t.string   "crypted_password"
-    t.string   "email"
+    t.string   "haslo"
+    t.string   "e_mail"
     t.string   "rodzaj"
     t.string   "adres"
-    t.string   "persistence_token"
-    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["e_mail"], :name => "index_users_on_e_mail", :unique => true
 
 end
