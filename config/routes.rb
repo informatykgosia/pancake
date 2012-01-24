@@ -1,7 +1,16 @@
 Projekt::Application.routes.draw do
+ # get "user_sessions/new"
+
+  #get "user_sessions/create"
+
+ # get "user_sessions/destroy"
+
   resources :users, :only => [:new, :create, :edit, :update]
 
- # get "users/new"
+  resource :user_session, :only => [:new, :create, :destroy]
+  root :to => "lokals#index"
+
+  # get "users/new"
 
  # get "users/create"
 
