@@ -1,8 +1,15 @@
 class User < ActiveRecord::Base
   attr_protected :admin
+  
+  email_format = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :login, :presence => true,
+            :length => { :maximum => 50 }
+  validates :email, :presence => true, 
+            :format => { :with => email_format }
 
   acts_as_authentic do |config|
     config.crypted_password_field = :crypted_password
     config.require_password_confirmation = true
-end
+  end
 end
