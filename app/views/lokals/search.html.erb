@@ -1,7 +1,7 @@
-<%= form_for @search do |s| %>
+<%= form_tag :url => {:action => :index} do %>
   <p>
-    <%= s.label :search %><br/>
-    <%= s.text_field :search %>
+    <%= label_tag :search, "Zapytanie" %><br/>
+    <%= text_field_tag :search, "" %>
   </p>
-  <p><%= s.submit "szukaj" %></p>
+  <p><%= submit_tag "szukaj" %></p>
 <% end %>
