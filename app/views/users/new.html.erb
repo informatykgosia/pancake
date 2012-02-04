@@ -1,6 +1,6 @@
-<div class=form>
+<img src=<%= asset_path 'titleregister.png' %> class=localisation />
+<div class=form_rejestr>
 <%= form_for @user do |a| %>
-  <!--byki-->
   <p>
     <%= a.label :login, 'login' %><br/>
     <%= a.text_field :login %>

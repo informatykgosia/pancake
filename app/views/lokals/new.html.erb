@@ -1,20 +1,25 @@
-<h1> Dodaj nowy lokal </h1>
-<%= form_for @lokal  do |f| %>
-  <% if @lokal.errors.any? %>
-    <ul>
-      <% @lokal.errors.full_messages.each do |msg| %>
-        <li><%= msg %> </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <p>
-  <%= f.label :nazwa, "Nazwa lokalu:" %> <br/>
-  <%= f.text_field :nazwa %>
-  </p>
-  <p>
-  <%= f.label :adres, "Adres:" %> <br/>
-  <%= f.text_field :adres %>
-  </p>
-  <%= f.submit "Dodaj!" %>
-<% end %>	
+<img src=<%= asset_path 'titlenewlocal.png' %> class=localisation />
+<div class=form_new_local>
+  <%= form_for @lokal  do |f| %>
+    <% if @lokal.errors.any? %>
+      <ul>
+        <% @lokal.errors.full_messages.each do |msg| %>
+          <li><%= msg %> </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <p>
+    <%= f.label :nazwa, "Nazwa lokalu:" %> <br/>
+    <%= f.text_field :nazwa, :class => 'field' %>
+    </p>
+    <p>
+    <%= f.label :adres, "Adres:" %> <br/>
+    <%= f.text_field :adres, :class => 'field' %>
+    </p>
+    <p>
+    <%= f.label  "Opis:" %><br />
+    <textarea class=area>
+    </textarea>
+  <p><%= f.submit "", :class => "add_local" %></p>
+  <% end %>	
+</div>
