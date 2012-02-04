@@ -10,8 +10,8 @@ Projekt::Application.routes.draw do
   resource :user_session, :only => [:new, :create, :destroy]
   root :to => "lokals#index"
   
-  match '/lokals/:id', :to => 'lokals#show'
-  match '/all_lokals', :to => 'users#index'
+ # match '/lokals/:id', :to => 'lokals#show'
+ # match '/all_lokals', :to => 'users#index'
 
   #resources :search, :only => [:search]
   #root :to => "lokals#search"
