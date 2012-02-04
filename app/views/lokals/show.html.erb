@@ -1,10 +1,11 @@
-
-  <p>
-  <b>nazwa</b>
+<p>
+  <b>Nazwa lokalu:</b>
   <%= @lokal.nazwa %>
-
   </p>
+
   <p>
-  <b>adres:</b>
+  <b> Adres:</b>
   <%= @lokal.adres %>
   </p>
+
+  <%= link_to 'Strona glowna', index_lokal_path(@lokal) %>
