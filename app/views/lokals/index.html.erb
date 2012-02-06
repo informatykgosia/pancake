@@ -1,5 +1,7 @@
 
 <img src=<%= asset_path 'tytulnalesnikarnie.png' %> class=localisation />
+<%= link_to image_tag("buttonsearch.png", :alt =>"button_search", :class => 'button'), search_lokals_path, :title => 'szukaj' %> 
+<%= link_to image_tag("buttonaddlocal.png", :alt =>"button_add_local", :class => 'button'), new_lokal_path, :title => 'dodaj nowy lokal' %> 
 
 
 <% if flash[:notice] %>
@@ -20,5 +22,3 @@
 
 
 
-<%= link_to image_tag("buttonaddlocal.png", :alt =>"button_add_local"), new_lokal_path, :title => 'dodaj nowy lokal' %> 
-<%= link_to image_tag("buttonsearch.png", :alt =>"button_search"), search_lokals_path, :title => 'szukaj' %> 
