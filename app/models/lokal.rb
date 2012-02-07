@@ -1,8 +1,10 @@
 class Lokal < ActiveRecord::Base
+  attr_accessible :nazwa, :adres, :photo, :ocena
   has_many :pancakes
 
   validates_presence_of :nazwa, :adres
-  
+  mount_uploader :photo, PhotoUploader
+
   def self.search(query)
     if !query.to_s.strip.empty?
       tokens = query.split.collect{|c| "%#{c.downcase}"}

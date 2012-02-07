@@ -20,6 +20,9 @@
     <%= f.label  "Opis:" %><br />
     <textarea class=area>
     </textarea>
+    <p>
+    <%= f.file_field :photo %>
+    </p>
   <p><%= f.submit "", :class => "add_local" %></p>
   <% end %>	
 </div>

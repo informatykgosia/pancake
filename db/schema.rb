@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120207133029) do
+ActiveRecord::Schema.define(:version => 20120207194745) do
 
   create_table "drpancakes", :force => true do |t|
     t.string   "title"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20120207133029) do
     t.string   "nazwa"
     t.string   "adres"
     t.float    "ocena"
-    t.string   "link_zdjecie"
+    t.string   "photo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
