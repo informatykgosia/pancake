@@ -24,7 +24,6 @@ class LokalsController < ApplicationController
     else
       render :action => "new"
     end
-
   end
 
   def search
@@ -34,12 +33,12 @@ class LokalsController < ApplicationController
   # Get /lokals/1.json
 
   def show
-    @lokal = Lokal.find(params[:id]) 
+    @lokal = Lokal.find(params[:id])
     
     respond_to do |format|
       format.html # show.html
       format.xml { render :xml => @lokal.to_xml }
-    end
-  
+    end  
   end
+  
 end

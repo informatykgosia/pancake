@@ -1,0 +1,12 @@
+<h1>Drpancakes#index</h1>
+<p>Find me in app/views/drpancakes/index.html.erb</p>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<% @theories.each do |theory| %>
+  <div>
+    <div> <%= theory.title %> </div>
+  </div>
+<% end %>
+ <br />
+ <%= link_to "nowa teoria", new_drpancake_path %>

@@ -1,14 +1,37 @@
 Projekt::Application.routes.draw do
+
+
+  # get "drpancakes/destroy"
+
+  # get "drpancakes/edit"
+
+  # get "drpancakes/show"
+
+  # get "drpancakes/index"
+
+  # get "drpancakes/new"
+
+  # get "drpancakes/create"
+
  # get "user_sessions/new"
 
   #get "user_sessions/create"
 
  # get "user_sessions/destroy"
-
+  resources :drpancakes, :only => [:new, :create, :index, :show]
   resources :users, :only => [:new, :create, :edit, :update]
 
   resource :user_session, :only => [:new, :create, :destroy]
   root :to => "lokals#index"
+  
+  #resources :lokals
+  #match "search" => "lokals#search"
+  
+  resources :lokals, :only => [:index, :new, :create, :show] do
+     get 'search', :on => :collection
+   end
+  # krzyczy że nie ma ścieżki wtf
+  post "lokals/search"
   
  # match '/lokals/:id', :to => 'lokals#show'
  # match '/all_lokals', :to => 'users#index'
@@ -86,7 +109,4 @@ Projekt::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  resources :lokals, :only => [:index, :new, :create] do
-    get 'search', :on => :collection
-  end
 end

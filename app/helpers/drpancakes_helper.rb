@@ -1,0 +1,2 @@
+module DrpancakesHelper
+end
