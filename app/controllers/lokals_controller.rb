@@ -1,4 +1,6 @@
 class LokalsController < ApplicationController
+ before_filter :authenticate, :except => [:index, :show, :search]
+ 
   def index
     if params[:query]
       @lokals = Lokal.search(params[:query]) 
