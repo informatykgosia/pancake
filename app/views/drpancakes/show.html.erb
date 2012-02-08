@@ -1,2 +1,16 @@
-<h1>Drpancakes#show</h1>
-<p>Find me in app/views/drpancakes/show.html.erb</p>
+<%= image_tag("drpancake.png", :alt =>"Dr Pancake", :class => "drpancake") %> 
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<div class="cloud">
+
+  <div class="title">
+    <%= @theory.title %>
+  </div>
+
+  <div class="theory">
+    <%= @theory.theory %>
+  </div>
+
+</div>
+

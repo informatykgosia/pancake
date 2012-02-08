@@ -1,11 +1,15 @@
-<%= form_for @user_session, :url => user_session_path do |a| %>
-  <p>
+<div class="form_login">
+  <%= form_for @user_session, :url => user_session_path do |a| %>
+    <p>
     <%= a.label :login %><br/>
-   <%= a.text_field :login %>
-  </p>
-  <p>
+    <%= a.text_field :login, :class => "field_login" %>
+    </p>
+    <p>
     <%= a.label :password %><br/>
-    <%= a.password_field :password %>
-  </p>
-  <p><%= a.submit "Dzialaj!" %></p>
-<% end %>
+    <%= a.password_field :password, :class => "field_login" %>
+    </p>
+    <p><%= a.submit "", :class => "login" %></p>
+  <% end%>
+  <p> lub </p>
+  <%= link_to image_tag("buttonregisterbigger.png", :alt =>"button_register"), :controller => "users", :action => "new", :title => "rejestruj się" %> 
+</div>

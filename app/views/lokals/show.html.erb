@@ -7,5 +7,6 @@
   <b> Adres:</b>
   <%= @lokal.adres %>
   </p>
+  <p> <%= image_tag(@lokal.photo) if @lokal.photo? %> </p>
 
-  <%= link_to 'Strona glowna', root_url %>
+  <%= link_to '<< Naleśnikarnie', root_url %>

@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	  <title>Pancake Corner</title>
-	  <%= stylesheet_link_tag "style" %>
-	  <%= javascript_include_tag "application" %>
-	  <%= csrf_meta_tags %>
-	</head>
-	<body>
-		<div class="top">
-                  <%= link_to image_tag("buttonregister.png", :alt =>"button_register", :class => "buttontop"), :controller => "users", :action => "new", :title => "szukaj" %> 
-		</div>
-		<div class=wrapper>
-		<header>
-			<%= image_tag("logo.png", :alt => "logo pancakecorner", :class => "logo") %>
-			<ul class="nav">
-				<li class=wider><%= link_to  image_tag("nalesnikarnie.png", :alt => "naleśnikarnie", :class =>"nav"), lokals_path, {:title => "nalesnikarnie"} %> </li>
-				<li><%= link_to image_tag("przepisy.png", :alt => "przepisy", :class =>"nav"), root_url, :title => "przepisy" %> </li>
-				<li><%= link_to image_tag("zamow.png", :alt =>"zamów", :class =>"nav"), "#", :title => "zamów" %> </li>
-				<li><%= link_to image_tag("teoria.png", :alt =>"teoria", :class =>"nav"),"#", :title => "teoria"  %></li>
-			</ul>			
-		</header>
-		<section>
-			<%= image_tag("gora.png", :alt => "ornament", :class => "ornament") %> 
-		<%= yield %>
-		</section>
-		</div>
-		<footer>
-			&copy Pancake Corner <%= Time.now.year %>
-		</footer>
-	</body>
+  <head>
+    <title>Pancake Corner</title>
+    <%= stylesheet_link_tag "style" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="top">
+
+     
+      <%= link_to image_tag("buttonregister.png", :alt =>"button_register", :class => "buttontop"), :controller => "users", :action => "new", :title => "rejestruj się" %> 
+      <div class="form_login_inline">
+        <%= form_for :user_session, :url => user_session_path do |a| %> 
+          <%= a.text_field :login, :class => "field_login_inline" %> 
+          <%= a.password_field :password, :class => "field_login_inline" %>
+           <%= a.submit "loguj się"%>
+        <% end%>
+      </div>
+   
+    </div>
+   
+    <div class=wrapper>
+      <header>
+      <%=link_to image_tag("logo.png", :alt => "logo pancakecorner", :class => "logo"), root_url, :title => "strona główna" %>
+      <ul class="nav">
+        <li class=wider><%= link_to  image_tag("nalesnikarnie.png", :alt => "naleśnikarnie", :class =>"nav"), lokals_path, {:title => "nalesnikarnie"} %> </li>
+        <li><%= link_to image_tag("przepisy.png", :alt => "przepisy", :class =>"nav"), root_url, :title => "przepisy" %> </li>
+        <li><%= link_to image_tag("zamow.png", :alt =>"zamów", :class =>"nav"), "#", :title => "zamów" %> </li>
+        <li><%= link_to image_tag("teoria.png", :alt =>"teoria", :class =>"nav"), drpancakes_path , :title => "teoria"  %></li>
+      </ul>			
+      </header>
+      <section>
+      <%= image_tag("gora.png", :alt => "ornament", :class => "ornament") %> 
+      <%= yield %>
+      </section>
+    </div>
+    <footer>
+    &copy Pancake Corner <%= Time.now.year %>
+  </footer>
+</body>
 
 </html>

@@ -1,7 +1,14 @@
 #encoding: utf-8
 class DrpancakesController < ApplicationController
   def show
+    @theory = Drpancake.find(params[:id])
+    
+    respond_to do |format|
+      format.html # show.html
+      format.xml { render :xml => @theory.to_xml }
+    end  
   end
+  
 
   def index
     @theories = Drpancake.order(:title)

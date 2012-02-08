@@ -10,8 +10,8 @@ body{
 .top{
   position:relative;
   text-align:right;
-  width:100%;
   margin: auto;
+  width:100%;
   background-color:#eabd40;
   height:50px;
   z-index:1;
@@ -19,10 +19,18 @@ body{
 
 .wrapper{
   position:relative;
-  width:990px;
   margin: 0px auto;
+  width:990px;
   height:100%;
   top:30px;
+}
+a{
+  text-decoration:none;
+  color:#157272;
+  font-weight:800;
+}
+a:hover, a:active {
+  color:#01a8a8;
 }
 section{
 
@@ -31,7 +39,7 @@ section{
   position:relative;
   margin-top:320px;
   width:100%;
-  min-height:480px;
+  min-height:530px;
   border-bottom-left-radius:15px;
   border-bottom-right-radius:15px;
 }
@@ -57,7 +65,8 @@ img.button{
 
 }
 img.buttontop{
-margin-top:-2px;
+  margin-top:-2px;
+  float: right;
 }
 ul.nav{
   display:block;
@@ -103,7 +112,7 @@ footer{
   margin-top:40px;
 }
 
-.form_rejestr, .form_new_local{
+.form_rejestr, .form_new_local, .form_login{
   position:relative;
   padding:10px;
   margin-top:10px;
@@ -115,6 +124,23 @@ footer{
   background-color:#c4d37a;
   width:400px;
   margin-left:280px;
+}
+.form_login{
+  width: 350px;
+  margin:auto;
+}
+.field_login{
+  border:3px solid #69a798;
+  background-color: #a2dbcf;
+  width:300px;
+}
+.field_login_inline{
+  width:150px;
+  height:15px;
+}
+.form_login_inline{
+  float:right;
+  margin-top:10px;
 }
 
 .form_new_local{
@@ -164,6 +190,41 @@ input.add_local{
   border:0;
   background-color:transparent;
 }
+input.login, input.login_small{
+  cursor:pointer;
+  cursor:hand;
+  background-color:transparent;
+}
+input.login{
+   background-image: url(<%= asset_path 'buttonloginbigger.png' %>);
+  width:328px;
+  height:86px;
+}
+input.login_small{
+  background-image: url(<%= asset_path 'buttonlogin.png' %>);
+ background-position: center bottom;
+  width:193px;
+  height:46px;
+  display:inline;
+  position:relative;
+  margin-bottom:30px;
+}
+
 input.zarejestruj:hover{
 
+}
+img.drpancake{
+  float:right;
+  right:20px;
+  z-index:1;
+  position:absolute;
+}
+
+.cloud{
+  border: 3px solid #7ecae2;
+  min-height:300px;
+  width:400px;
+  margin-left:141px;
+  padding:10px;
+  border-radius:20px;
 }
