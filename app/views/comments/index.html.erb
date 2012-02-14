@@ -1,0 +1,17 @@
+<h1>Komentarze</h1>
+
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <p><%= comment.content %></p>
+  <% end %>
+</div>
+
+<h2>Nowy komentarz </h2>
+
+<% form_for [@commentable, Comment.new] do |form| %>
+  <p>
+    <%= form.label :content %><br />
+    <% form.text_area :content %>
+  </p>
+  <p><%= form.submit "Dodaj komentarz" %></p>
+<% end %>

@@ -1,5 +1,6 @@
 class Lokal < ActiveRecord::Base
   attr_accessible :nazwa, :adres, :photo, :ocena
+  has_many :comments, :as => :commentable
   has_many :pancakes
 
   validates :nazwa, :adres,  :presence => {:message => 'jest wymaganym polem'}

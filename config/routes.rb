@@ -22,8 +22,8 @@ Projekt::Application.routes.draw do
   resources :users, :only => [:new, :create, :edit, :update]
 
   resource :user_session, :only => [:new, :create, :destroy]
-match "login" => "user_sessions#new"
-match "logout" => "user_sessions#destroy"
+  match "login" => "user_sessions#new"
+  match "logout" => "user_sessions#destroy"
   root :to => "lokals#index"
   
   #resources :lokals
@@ -31,7 +31,11 @@ match "logout" => "user_sessions#destroy"
   
   resources :lokals, :only => [:index, :new, :create, :show] do
      get 'search', :on => :collection
+     resources :comments
    end
+  resources :lokals, :has_many => :comments
+  resources :pancakes, :has_many => :comments
+  
   # krzyczy że nie ma ścieżki wtf
   post "lokals/search"
   
