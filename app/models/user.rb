@@ -3,9 +3,10 @@ class User < ActiveRecord::Base
   
   email_format = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :login, :presence => true,
+  validates :login, :email,  :presence => {:message => 'jest wymaganym polem'}
+  validates :login, 
             :length => { :maximum => 50 }
-  validates :email, :presence => true, 
+  validates :email, 
             :format => { :with => email_format }
 
   acts_as_authentic do |config|

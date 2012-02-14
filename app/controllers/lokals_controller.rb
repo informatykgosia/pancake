@@ -1,3 +1,4 @@
+#encoding: utf-8
 class LokalsController < ApplicationController
  before_filter :authenticate, :except => [:index, :show, :search]
  

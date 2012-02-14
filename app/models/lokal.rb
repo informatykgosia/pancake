@@ -2,7 +2,7 @@ class Lokal < ActiveRecord::Base
   attr_accessible :nazwa, :adres, :photo, :ocena
   has_many :pancakes
 
-  validates_presence_of :nazwa, :adres
+  validates :nazwa, :adres,  :presence => {:message => 'jest wymaganym polem'}
   mount_uploader :photo, PhotoUploader
 
   def self.search(query)

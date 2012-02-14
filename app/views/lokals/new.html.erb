@@ -4,7 +4,7 @@
     <% if @lokal.errors.any? %>
       <ul>
         <% @lokal.errors.full_messages.each do |msg| %>
-          <li><%= msg %> </li>
+          <li class="error">!<%= msg %> </li>
         <% end %>
       </ul>
     <% end %>
