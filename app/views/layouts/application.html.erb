@@ -15,9 +15,9 @@
         <%= form_for :user_session, :url => user_session_path do |a| %> 
           <%= a.text_field :login, :class => "field_login_inline" %> 
           <%= a.password_field :password, :class => "field_login_inline" %>
-           <%= a.submit "loguj się"%>
-        <% end%>
       </div>
+          <%= a.submit "", :class => "login_small"%>
+        <% end%>
    
     </div>
    
