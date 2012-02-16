@@ -8,5 +8,12 @@
   <%= @lokal.adres %>
   </p>
   <p> <%= image_tag(@lokal.photo) if @lokal.photo? %> </p>
-
+  <div>
+    <% if @comments != nil %>
+    <%= @comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <%end %>
+<% end %>
+  </div>
+  <%= link_to 'komentarze', @comments %>
   <%= link_to '<< Naleśnikarnie', root_url %>

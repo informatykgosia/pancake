@@ -7,11 +7,12 @@
 </div>
 
 <h2>Nowy komentarz </h2>
-
-<% form_for [@commentable, Comment.new] do |form| %>
+<div id="nowy_komentarz">
+<%= form_for [@commentable, Comment.new] do |form| %>
   <p>
-    <%= form.label :content %><br />
-    <% form.text_area :content %>
+    <%= form.label :content, "tresc komentarza:" %><br />
+    <%= form.text_area :content, :class => 'field' %>
   </p>
   <p><%= form.submit "Dodaj komentarz" %></p>
+</div>
 <% end %>

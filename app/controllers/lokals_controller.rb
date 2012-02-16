@@ -37,7 +37,8 @@ class LokalsController < ApplicationController
 
   def show
     @lokal = Lokal.find(params[:id])
-    
+    @comment = Comment.new(:commentable => @lokal)
+
     respond_to do |format|
       format.html # show.html
       format.xml { render :xml => @lokal.to_xml }

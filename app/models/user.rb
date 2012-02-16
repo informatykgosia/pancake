@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :comments
+
   attr_protected :admin
   
   email_format = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

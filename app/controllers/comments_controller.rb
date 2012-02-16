@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
   def create
     @commentable = find_commentable
-    @comment = @commentable.comments.build(params:[:comment])
+    @comment = @commentable.comments.build(params[:comment])
     if @comment.save
       flash[:notice] = "Udalo sie dodac komentarz"
       redirect_to :id => nil
