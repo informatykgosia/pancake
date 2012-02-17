@@ -15,5 +15,6 @@
   <%end %>
 <% end %>
   </div>
-  <%= link_to 'komentarze', @comments %>
-  <%= link_to '<< Naleśnikarnie', root_url %>
+
+  <%= link_to '<< Naleśnikarnie', root_url%>
+  <%= link_to 'Komentarze', lokal_comments_url(@lokal) %>

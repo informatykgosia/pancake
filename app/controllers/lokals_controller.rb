@@ -44,5 +44,5 @@ class LokalsController < ApplicationController
       format.xml { render :xml => @lokal.to_xml }
     end  
   end
-  
+    
 end
