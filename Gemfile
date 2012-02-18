@@ -38,3 +38,4 @@ end
 gem 'therubyracer'
 gem 'authlogic'
 gem 'carrierwave'
+gem 'rmagick'
