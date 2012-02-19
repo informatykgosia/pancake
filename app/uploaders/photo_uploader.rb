@@ -32,11 +32,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
    version :thumb do
      process :resize_to_limit => [650, 650]
    end
-<<<<<<< HEAD:app/uploaders/photo_uploader.rb
 
-=======
    
->>>>>>> 2dcad0f1fb6007fd82000d8fa86808612f58afa6:app/uploaders/photo_uploader.rb
    version :thumb2 do
      process :resize_to_limit => [200, 200]
    end
