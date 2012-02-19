@@ -1,18 +1,17 @@
-<h1>Komentarze</h1>
 
-<div id="comments">
+<img src=<%= asset_path 'titlecomments.png' %> class=localisation />
+<div class="comments">
   <% @comments.each do |comment| %>
     <p><%= comment.content %></p>
   <% end %>
-</div>
 
-<h2>Nowy komentarz </h2>
-<div id="nowy_komentarz">
+
+
 <%= form_for [@commentable, Comment.new] do |form| %>
   <p>
     <%= form.label :content, "tresc komentarza:" %><br />
-    <%= form.text_area :content, :class => 'field' %>
+    <%= form.text_area :content, :class => "area" %>
   </p>
-  <p><%= form.submit "Dodaj komentarz" %></p>
+  <p><%= form.submit "", :class => "add_comment" %></p>
 </div>
 <% end %>

@@ -8,9 +8,10 @@
   <%= @lokal.adres %>
   </p>
   
-  <p> <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
+   <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
   <div>
     <% if @comments != nil %>
+      
     <%= @comments.each do |comment| %>
     <li><%= comment.content %></li>
   <%end %>
@@ -18,4 +19,4 @@
   </div>
 
   <%= link_to '<< Naleśnikarnie', root_url%>
-  <%= link_to 'Komentarze', lokal_comments_url(@lokal) %>
+<%= link_to image_tag("buttoncomments.png", :alt =>"button_comments", :class => ''), lokal_comments_url(@lokal), :title => 'zobacz komentarze' %> 

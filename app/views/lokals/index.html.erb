@@ -1,21 +1,35 @@
 
 <img src=<%= asset_path 'tytulnalesnikarnie.png' %> class=localisation />
-<%= link_to image_tag("buttonsearch.png", :alt =>"button_search", :class => 'button'), search_lokals_path, :title => 'szukaj' %> 
-<%= link_to image_tag("buttonaddlocal.png", :alt =>"button_add_local", :class => 'button'), new_lokal_path, :title => 'dodaj nowy lokal' %> 
 
+<div class="search">
+<%= form_tag :url => {:action => :index} do %>
+  
+    
+  <%= text_field_tag :search, "", :class => "field_search" %>
+  
+  <%= submit_tag "", :class => "button_search" %>
+<% end %>
+</div>
+
+<%= link_to image_tag("buttonaddlocal.png", :alt =>"button_add_local", :class => 'button'), new_lokal_path, :title => 'dodaj nowy lokal' %> 
 
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-<p> ostatnio dodane lokale </p>
 
 <% @lokals.each do |lokal| %>
-  <div>
-    <div>
-     
-    <%= link_to lokal.nazwa, lokal %></div>
-              
+  <div class = "lokal">
+
+    
+    <%= link_to(image_tag(lokal.photo_url(:thumb2),:class => "lokal_min"), lokal) if lokal.photo? %>
+    <div class = "lokal_info">
+      <%= link_to lokal.nazwa, lokal %>
+      <p>  
+      <%= lokal.adres %>
+      </p>
+  
+    </div>
   </div>
 
 <% end %>
