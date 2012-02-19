@@ -1,21 +1,21 @@
 <p>
   <b>Nazwa lokalu:</b>
   <%= @lokal.nazwa %>
-  </p>
-
-  <p>
+</p>
+<p>
   <b> Adres:</b>
   <%= @lokal.adres %>
-  </p>
-  
-  <p> <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
-  <div>
-    <% if @comments != nil %>
-    <%= @comments.each do |comment| %>
-    <li><%= comment.content %></li>
+</p>  
+<p> 
+  <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
+</p>
+<div>
+  <% @lokal.comments.each do |comment| %>      
+    <p>
+      <%= comment.content %>
+    </p>
   <%end %>
-<% end %>
-  </div>
+</div>
 
-  <%= link_to '<< Naleśnikarnie', root_url%>
-  <%= link_to 'Komentarze', lokal_comments_url(@lokal) %>
+<%= link_to '<< Naleśnikarnie', root_url%>
+<%= link_to 'Komentarze', lokal_comments_url(@lokal) %>

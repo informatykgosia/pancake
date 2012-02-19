@@ -11,7 +11,7 @@ class LokalsController < ApplicationController
         when 2..10 then render :action => "show_many"
       end
     else
-      @lokals = Lokal.order("created_at DESC") 
+      @lokals = Lokal.order("created_at DESC")
     end
   end
 
@@ -38,7 +38,9 @@ class LokalsController < ApplicationController
   def show
     @lokal = Lokal.find(params[:id])
     @comment = Comment.new(:commentable => @lokal)
-
+   # @komentarze = Comment.find(params[:lokal])    
+   # render :template => 'comments/index'
+    
     respond_to do |format|
       format.html # show.html
       format.xml { render :xml => @lokal.to_xml }
