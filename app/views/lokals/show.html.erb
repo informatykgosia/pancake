@@ -1,11 +1,11 @@
 <p>
   <b>Nazwa lokalu:</b>
   <%= @lokal.nazwa %>
-  </p>
-
-  <p>
+</p>
+<p>
   <b> Adres:</b>
   <%= @lokal.adres %>
+<<<<<<< HEAD:app/views/lokals/show.html.erb
   </p>
   
    <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
@@ -14,9 +14,24 @@
       
     <%= @comments.each do |comment| %>
     <li><%= comment.content %></li>
+=======
+</p>  
+<p> 
+  <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
+</p>
+<div>
+  <% @lokal.comments.each do |comment| %>      
+    <p>
+      <%= comment.content %>
+    </p>
+>>>>>>> 2dcad0f1fb6007fd82000d8fa86808612f58afa6:app/views/lokals/show.html.erb
   <%end %>
-<% end %>
-  </div>
+</div>
 
+<<<<<<< HEAD:app/views/lokals/show.html.erb
   <%= link_to '<< Naleśnikarnie', root_url%>
 <%= link_to image_tag("buttoncomments.png", :alt =>"button_comments", :class => ''), lokal_comments_url(@lokal), :title => 'zobacz komentarze' %> 
+=======
+<%= link_to '<< Naleśnikarnie', root_url%>
+<%= link_to 'Komentarze', lokal_comments_url(@lokal) %>
+>>>>>>> 2dcad0f1fb6007fd82000d8fa86808612f58afa6:app/views/lokals/show.html.erb
