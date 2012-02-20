@@ -22,7 +22,7 @@ class DrpancakesController < ApplicationController
   def create
     @theory = Drpancake.new(params[:drpancake])
     if @theory.save
-      flash[:notice] = "Dodano nową teorię dr. Pancake'a!"
+      flash[:notice] = "Dodano nową teorię \n\n dr Pancake'a!"
       redirect_to :action => "index"
     else
       render :action => "new"

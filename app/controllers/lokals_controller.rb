@@ -22,7 +22,7 @@ class LokalsController < ApplicationController
   def create
     @lokal = Lokal.new(params[:lokal])
     if @lokal.save
-      flash[:notice] = "Udalo sie dodac lokal!"
+      flash[:notice] = "Udało się dodać lokal!"
       redirect_to :action => "index"
     else
       render :action => "new"
