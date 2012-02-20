@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+
+  will_paginate:
+    previous_label: "&#8612;nowsze"
+    next_label: "dalej &#8614;"

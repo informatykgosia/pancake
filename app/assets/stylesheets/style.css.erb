@@ -174,6 +174,12 @@ float:left;
   width:500px;
   margin: auto;
 }
+.form_add_theory{
+  margin:auto;
+  margin-top:-30px;
+  width:506px;
+  background-image: url(<%= asset_path 'square.png' %>);	
+}
 .field, .area{
   border:3px solid #c4d27a;
   width:400px;
@@ -185,6 +191,16 @@ float:left;
   border-radius:10px;
   padding:5px;
 }
+.transparent{
+  background-color:transparent;
+  width:450px;
+  border: 1px solid #000000;
+  margin-left:23px;
+  border-radius:10px;
+
+  margin-bottom:-20px;
+}
+
 .comments{
   width:400px;
   margin:auto;
@@ -204,6 +220,7 @@ float:left;
 input:focus, input:hover, textarea:focus, textarea:hover{
   background-color:#fff;
 }
+
 input{
   height:20px;
   padding:5px;
@@ -259,6 +276,15 @@ input.add_comment{
   height:80px;
   background-color:transparent;
   margin-left:250px;
+  cursor:pointer;
+  cursor:hand;
+}
+input.add_theory{
+  background-image: url(<%= asset_path 'buttontheory.png' %>);
+  margin-left:190px;
+  width:125px;
+  height:80px;
+  background-color:transparent;
   cursor:pointer;
   cursor:hand;
 }
@@ -334,4 +360,21 @@ input.button_search{
 }
 img.newtheory{
   float:left;
+}
+
+.pagination{
+  padding: 3px;
+  margin:auto;
+   min-width:50px;
+   border-top: 2px solid #f2dd72;
+   text-align:center;
+   margin-bottom:40px;
+}
+
+.pagination a {
+  color: #eabd40;
+
+}
+.pagination a:hover, .pagination a:active{
+  color: #d39117;
 }

@@ -39,4 +39,19 @@ class DrpancakesController < ApplicationController
     @theory = Drpancake.find(params[:id])
   end
 
+  def update
+    @theory = Drpancake.find(params[:id])
+
+    respond_to do |format|
+      if @theory.update_attributes(params[:theory])
+        format.html { redirect_to @theory, notice: 'Teoria została pomyślnie zmieniona' }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @rate.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /rates/1
 end
