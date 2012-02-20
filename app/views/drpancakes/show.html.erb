@@ -1,7 +1,16 @@
 <%= image_tag("drpancake.png", :alt =>"Dr Pancake", :class => "drpancake") %> 
+<div class="tableofcontents">
+  <% @theories.each do |theory| %>
+    <div class="titles2">
+       <%= link_to theory.title, theory %> 
+    </div>
+
+  <% end %>
+</div>
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
+
 <div class="cloud">
 
   <div class="title">
@@ -11,6 +20,16 @@
   <div class="theory">
     <%= @theory.theory %>
   </div>
-
 </div>
+<div class="undercloud">
+    <%= link_to image_tag("buttontheory.png", :alt =>"button_add_theory", :class => 'newtheory'), new_drpancake_path, :title => 'nową teorię' %> 
+
+  <div class = "option">
+    <%= link_to "usun", :action => "destroy" %>
+  </div>
+  <div class = "option">
+    <%= link_to "edytuj", edit_drpancake_path(@theory) %>
+  </div>
+</div>
+
 

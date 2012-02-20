@@ -1,14 +1,21 @@
-
 <%= image_tag("drpancake.png", :alt =>"Dr Pancake", :class => "drpancake") %> 
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-<div class="cloud">
-  <% @theories.each do |theory| %>
-  <div>
-    <div> <%= link_to theory.title, theory %> </div>
-  </div>
-<% end %>
-</div>
 
-<%= link_to "nowa teoria", new_drpancake_path %>
+<div class="cloud">
+  <p>Nazywam się Doktor Pancake i chętnie podzielę się z wami swoją obszerną wiedzą dotyczącą naleśników.</p>
+  <p>  Wybierzcie zagadnienie, które was interesuje
+  <br /> i poszerzajcie swoją naleśnikową wiedzę.</p>
+
+
+  <% @theories.each do |theory| %>
+    <div class="titles">
+      <div> <%= link_to theory.title, theory %> </div>
+    </div>
+
+  <% end %>
+</div>
+<div class="undercloud">
+  <%= link_to image_tag("buttontheory.png", :alt =>"button_add_theory", :class => 'newtheory'), new_drpancake_path, :title => 'nową teorię' %> 
+</div>
