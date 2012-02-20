@@ -1,4 +1,6 @@
+#encoding: utf-8
 class CommentsController < ApplicationController
+  before_filter :authenticate, :except => [:show]
 
   def index
     @commentable = find_commentable

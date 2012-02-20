@@ -1,0 +1,7 @@
+<ol>
+<% @ingredients.each do |ing| %>
+  <li><%= ing.nazwa %></li>
+<% end %>
+</ol>
+
+<%= link_to 'dodaj skladnik', new_ingredient_path %>

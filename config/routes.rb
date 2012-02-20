@@ -19,6 +19,7 @@ Projekt::Application.routes.draw do
 
  # get "user_sessions/destroy"
   resources :drpancakes, :only => [:new, :create, :index, :show]
+  resources :ingredients, :only => [:new, :create, :index, :show, :destroy]
   resources :users, :only => [:new, :create, :edit, :update]
 
   resource :user_session, :only => [:new, :create, :destroy]
@@ -36,6 +37,7 @@ Projekt::Application.routes.draw do
   resources :lokals, :has_many => :comments
   resources :pancakes, :has_many => :comments
   
+
   # krzyczy że nie ma ścieżki wtf
   post "lokals/search"
   

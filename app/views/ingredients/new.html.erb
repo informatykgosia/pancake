@@ -1,0 +1,19 @@
+<div class="form_new_ingredient">
+  <%= form_for @ingredient do |f| %> 
+    <% if @ingredient.errors.any? %>
+      <ul>
+        <% @ingredient.errors.full_messages.each do |msg| %>
+          <li class="error"> <%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <p>
+    <%= f.label :nazwa, "Nazwa skladnika:" %> <br />
+    <%= f.text_field :nazwa, :class => 'field' %>
+    </p>
+    <p>
+    <%= f.select :kategoria, options_for_select(CATS) %>
+    </p>
+    <p><%= f.submit "Dodaj", :class => "add_ingredient" %></p>
+  <% end %>
+</div>
