@@ -21,7 +21,7 @@ Projekt::Application.routes.draw do
 
 
   resources :ingredients, :only => [:new, :create, :index, :show, :destroy]
-  resources :drpancakes, :only => [:new, :create, :index, :show, :edit, :destroy
+  resources :drpancakes, :only => [:new, :create, :index, :show, :edit, :destroy]
   resources :users, :only => [:new, :create, :edit, :update]
 
   resource :user_session, :only => [:new, :create, :destroy]
