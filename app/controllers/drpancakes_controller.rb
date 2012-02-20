@@ -3,6 +3,7 @@ class DrpancakesController < ApplicationController
   def show
     @theory = Drpancake.find(params[:id])
     
+    @theories = Drpancake.order(:title)
     respond_to do |format|
       format.html # show.html
       format.xml { render :xml => @theory.to_xml }

@@ -5,7 +5,7 @@ body{
   font-family: Trebuchet MS, Arial, sans-serif;
   height:100%;
   margin-top:0px;
-
+text-align: justify;
 }
 .top{
   position:relative;
@@ -272,6 +272,9 @@ img.drpancake{
   z-index:1;
   position:absolute;
 }
+.tableofcontents{
+float:left;
+}
 input.button_search{
   background-color:transparent;
   background-image: url(<%= asset_path 'buttonsearch.png' %>);
@@ -291,13 +294,33 @@ input.button_search{
   min-height:300px;
   width:400px;
   margin-left:141px;
+  margin-bottom:-10px;
   padding:10px;
   border-radius:20px;
+}
+.titles{
+  text-align:center;
+  font-family: georgia;
+}
+
+.titles2{
+  font-family:georgia;
+  padding:2px 5px;
+  border-left:5px solid #84c8df;
+  margin-bottom:3px;
+  font-size:12px;
+  text-align:left;
+}
+.tableofcontents{
+  width:120px;
+  min-height:100px;
+  margin-top:20px;
 }
 .undercloud{
   width:400px;
   margin-left:141px;
   margin-top:5px;
+  height:80px;
 }
 .option{
   min-width:40px;
@@ -305,6 +328,10 @@ input.button_search{
   
   border-radius:5px;
   background-color:#91bdc4;
-  margin-left:10px;
   float:right;
+  margin-left:10px;
+  margin-top:15px;
+}
+img.newtheory{
+  float:left;
 }
