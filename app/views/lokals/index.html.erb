@@ -17,7 +17,8 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-
+<% @lokals = Lokal.paginate(:page => params[:page]).order('created_at DESC') %>
+<%= will_paginate @lokals %>
 <% @lokals.each do |lokal| %>
   <div class = "lokal">
 
