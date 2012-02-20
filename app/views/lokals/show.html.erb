@@ -11,11 +11,14 @@
 </p>
 <div>
   <% @lokal.comments.each do |comment| %>      
-    <p>
+    <div class="date">
+      <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %>
+    </div>
+    <div class="comment">
       <%= comment.content %>
-    </p>
+    </div>
   <%end %>
 </div>
 
+      <%= link_to image_tag("buttoncomment.png", :alt =>"button_comment", :class => ""), lokal_comments_url(@lokal), :title => "dodaj komentarz" %> 
 <%= link_to '<< Naleśnikarnie', root_url%>
-<%= link_to 'Komentarze', lokal_comments_url(@lokal) %>

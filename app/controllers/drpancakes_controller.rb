@@ -35,6 +35,7 @@ class DrpancakesController < ApplicationController
   end
 
   def edit
+    @theory = Drpancake.find(params[:id])
   end
 
 end

@@ -18,7 +18,7 @@ Projekt::Application.routes.draw do
   #get "user_sessions/create"
 
  # get "user_sessions/destroy"
-  resources :drpancakes, :only => [:new, :create, :index, :show]
+  resources :drpancakes, :only => [:new, :create, :index, :show, :edit, :destroy]
   resources :users, :only => [:new, :create, :edit, :update]
 
   resource :user_session, :only => [:new, :create, :destroy]

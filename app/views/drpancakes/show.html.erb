@@ -11,6 +11,13 @@
   <div class="theory">
     <%= @theory.theory %>
   </div>
-
+</div>
+<div class="undercloud">
+  <div class = "option">
+    <%= link_to "usun", :action => "destroy" %>
+  </div>
+  <div class = "option">
+    <%= link_to "edytuj", edit_drpancake_path(@theory) %>
+  </div>
 </div>
 

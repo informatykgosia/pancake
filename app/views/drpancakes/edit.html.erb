@@ -1,2 +1,18 @@
-<h1>Drpancakes#edit</h1>
-<p>Find me in app/views/drpancakes/edit.html.erb</p>
+<%= form_for @theory do |f| %>
+  <% if @theory.errors.any? %>
+    <ul>
+      <% @theory.errors.full_messages.each do |msg| %>
+        <li> <%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <p>
+  <%= f.label :title, "Tytuł:" %> <br />
+  <%= f.text_field :title %>
+  </p>
+  <p>
+  <%= f.label :theory, "Teoria:" %> <br />
+  <%= f.text_area :theory %>
+  </p>
+  <%= f.submit "Dodaj" %>
+<% end %>
