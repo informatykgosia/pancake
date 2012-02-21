@@ -8,19 +8,24 @@
   </head>
   <body>
     <div class="top">
-
-     
-      <%= link_to image_tag("buttonregister.png", :alt =>"button_register", :class => "buttontop"), :controller => "users", :action => "new", :title => "rejestruj się" %> 
-      <div class="form_login_inline">
-        <%= form_for :user_session, :url => user_session_path do |a| %> 
-          <%= a.text_field :login, :class => "field_login_inline" %> 
-          <%= a.password_field :password, :class => "field_login_inline" %>
-      </div>
+      <% if current_user %>
+        <%= link_to image_tag("buttonlogout.png", :alt =>"button_logout", :class => "buttontop"), logout_path, :title => "wyloguj się" %> 
+        <div class="greeting">
+          Witaj, <%= current_user.login %>!
+        </div>
+      <% else %> 
+        <%= link_to image_tag("buttonregister.png", :alt =>"button_register", :class => "buttontop"), :controller => "users", :action => "new", :title => "rejestruj się" %> 
+        <div class="form_login_inline">
+          <%= form_for :user_session, :url => user_session_path do |a| %> 
+            <%= a.text_field :login, :class => "field_login_inline" %> 
+            <%= a.password_field :password, :class => "field_login_inline" %>
+          </div>
           <%= a.submit "", :class => "login_small"%>
-        <% end%>
-   
+        <% end %>
+      <% end %>
+
     </div>
-   
+
     <div class=wrapper>
       <header>
       <%=link_to image_tag("logo.png", :alt => "logo pancakecorner", :class => "logo"), root_url, :title => "strona główna" %>
@@ -30,7 +35,7 @@
         <li><%= link_to image_tag("zamow.png", :alt =>"zamów", :class =>"nav"), "#", :title => "zamów" %> </li>
         <li><%= link_to image_tag("teoria.png", :alt =>"teoria", :class =>"nav"), drpancakes_path , :title => "teoria"  %></li>
       </ul>			
-      
+
       </header>
       <section>
       <%= image_tag("gora.png", :alt => "ornament", :class => "ornament") %> 
@@ -39,7 +44,7 @@
     </div>
     <footer>
     &copy Pancake Corner <%= Time.now.year %>
-    <div> <%= link_to "załoga", crew_url, :class => "footer" %></div>
+  <div> <%= link_to "załoga", crew_url, :class => "footer" %></div>
   </footer>
 </body>
 

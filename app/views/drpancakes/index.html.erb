@@ -17,6 +17,8 @@
 
   <% end %>
 </div>
-<div class="undercloud">
-  <%= link_to image_tag("buttontheory.png", :alt =>"button_add_theory", :class => 'newtheory'), new_drpancake_path, :title => 'nową teorię' %> 
-</div>
+<% if current_user %>
+  <div class="undercloud">
+    <%= link_to image_tag("buttontheory.png", :alt =>"button_add_theory", :class => 'newtheory'), new_drpancake_path, :title => 'nową teorię' %> 
+  </div>
+<% end %>
