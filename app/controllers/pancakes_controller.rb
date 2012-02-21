@@ -8,7 +8,7 @@ class PancakesController < ApplicationController
 
   def new
     @pancake = Pancake.new
-    params[:pancake][:ingredient_ids] ||= []
+   # params[:pancake][:ingredient_ids] ||= []
   end
 
   def create
