@@ -38,8 +38,6 @@ class LokalsController < ApplicationController
   def show
     @lokal = Lokal.find(params[:id])
     @comment = Comment.new(:commentable => @lokal)
-   # @komentarze = Comment.find(params[:lokal])    
-   # render :template => 'comments/index'
     
     respond_to do |format|
       format.html # show.html

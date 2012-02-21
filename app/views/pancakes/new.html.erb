@@ -1,8 +1,21 @@
+<div class=form_new_pancake>
+  <%= form_for @pancake do |f| %>
+    <% if @pancake.errors.any? %>
+      <ul>
+        <%= @pancake.errors.full_messages.each do |msg| %>
+          <li class="error"><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+   
 <% for pancake in Pancake.find(:all) %>
-  <div>
+  <p>
     <%= check_box_tag "pancake[ingredient_ids][]", ingredient.id, @pancake.ingredients.include?(ingredient) %>
     <%= ingredient.nazwa %>
-  </div>
+  </p>
 <% end %>
+<p><%= f.submit "ok", :class => "add_pancake" %></p>
+<% end %>
+</div>
 
 
