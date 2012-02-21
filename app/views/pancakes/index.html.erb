@@ -1,0 +1,17 @@
+<% content_for :title, "Przepisy" %>
+
+<%= link_to "Nowy przepis", new_pancake_path %>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<% @pancakes = Pancake.paginate(:page => params[:page]).order(:cena) %>
+<% @pancakes.each do |pan| %>
+  <div class = "pancake">
+    <%= pan.cena %>
+  </div>
+<% end %>
+
+<%= will_paginate @pancakes %>
+<br />
