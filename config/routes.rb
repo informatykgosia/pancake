@@ -27,6 +27,7 @@ Projekt::Application.routes.draw do
   resource :user_session, :only => [:new, :create, :destroy]
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
+  match 'crew' => 'pages#crew' 
   root :to => "lokals#index"
   
   #resources :lokals

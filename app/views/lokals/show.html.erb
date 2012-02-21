@@ -6,6 +6,10 @@
 <p>
   <b> Adres:</b>
   <%= @lokal.adres %>
+</p>
+<p>
+<b>Opis:</b>
+  <%= @lokal.opis %>
 </p>  
 <p> 
   <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>

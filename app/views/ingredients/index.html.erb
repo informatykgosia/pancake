@@ -1,6 +1,6 @@
 <ol>
 <% @ingredients.each do |ing| %>
-  <li><%= ing.nazwa %></li>
+  <li><%= ing.nazwa %>  <i>(<%= ing.kategoria %></i>)</li>
 <% end %>
 </ol>
 
