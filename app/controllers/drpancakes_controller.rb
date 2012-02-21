@@ -33,6 +33,7 @@ class DrpancakesController < ApplicationController
   def destroy
     @theory = Drpancake.find(params[:id])
     @theory.destroy
+    redirect_to :action => "index"
   end
 
   def edit
