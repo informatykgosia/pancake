@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pancake Corner</title>
+    <title>Pancake Corner | <%=h yield(:title) %></title>
     <%= stylesheet_link_tag "style" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -39,7 +39,7 @@
     </div>
     <footer>
     &copy Pancake Corner <%= Time.now.year %>
-    <div> <%= link_to "załoga", 'crew', :class => "footer" %></div>
+    <div> <%= link_to "załoga", crew_url, :class => "footer" %></div>
   </footer>
 </body>
 
