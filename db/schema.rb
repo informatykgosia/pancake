@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221173349) do
+ActiveRecord::Schema.define(:version => 20120221220231) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20120221173349) do
     t.datetime "updated_at"
     t.integer  "lokal_id"
     t.string   "nazwa"
+    t.string   "opis"
   end
 
   create_table "users", :force => true do |t|
