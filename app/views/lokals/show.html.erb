@@ -1,19 +1,20 @@
 <% content_for :title, "Naleśnikarnie " %>
-<p>
-  <b>Nazwa lokalu:</b>
-  <%= @lokal.nazwa %>
-</p>
-<p>
-  <b> Adres:</b>
-  <%= @lokal.adres %>
-</p>
-<p>
-<b> Opis:</b>
-  <%= @lokal.opis %>
-</p>  
-<p> 
+<div class="lokal_show">
+ <div class=lokal_nazwa>
+    <%= @lokal.nazwa %>
+  </div>
+  <br />
+  <i>
+    <%= @lokal.adres %>
+  </i>
+
+  <div class="lokal_opis">
+    <%= @lokal.opis %>
+  </div>  
+   
+  
+</div>
   <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
-</p>
 <div>
   <% @lokal.comments.each do |comment| %>      
     <div class="date">
@@ -25,5 +26,5 @@
   <%end %>
 </div>
 
-      <%= link_to image_tag("buttoncomment.png", :alt =>"button_comment", :class => ""), lokal_comments_url(@lokal), :title => "dodaj komentarz" %> 
+<%= link_to image_tag("buttoncomment.png", :alt =>"button_comment", :class => ""), lokal_comments_url(@lokal), :title => "dodaj komentarz" %> 
 <%= link_to '<< Naleśnikarnie', root_url%>

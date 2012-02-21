@@ -25,9 +25,14 @@
     <%= link_to(image_tag(lokal.photo_url(:thumb2),:class => "lokal_min"), lokal) if lokal.photo? %>
     <div class = "lokal_info">
       <%= link_to lokal.nazwa, lokal %>
-      <p>  
-      <%= lokal.adres %>
-      </p>
+      <br />  
+      <i> <%= lokal.adres %></i>
+      <br />
+      <div class= "lokal_opis2">
+        <%= truncate(lokal.opis, :length => 150) %>
+        <%= link_to ">>>", lokal %>
+      </div>
+
   
     </div>
   </div>
