@@ -1,5 +1,5 @@
 class Lokal < ActiveRecord::Base
-  attr_accessible :nazwa, :adres, :photo, :ocena
+  attr_accessible :nazwa, :adres, :photo, :ocena, :opis
   has_many :comments, :as => :commentable
   has_many :pancakes
 
