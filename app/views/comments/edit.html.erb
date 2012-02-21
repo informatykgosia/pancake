@@ -1,0 +1,11 @@
+<h1> Edycja komentarza </h1>
+
+<div class="comments">
+ <%= form_for [@commentable, Comment.new] do |form| %>
+  <p>
+   <%= form.label :content, "tresc komentarza:" %><br />
+   <%= form.text_area :content, :class => "area" %>
+  </p>
+  <p><%= form.submit "", :class => "add_comment" %></p>
+ </div>
+ <% end %>

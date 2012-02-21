@@ -33,5 +33,19 @@ class IngredientsController < ApplicationController
    @ingredient = Ingredient.find(params[:id])
    @ingredient.destroy
  end
+
+ def edit
+   @ingredient = Ingredient.find(params[:id])
+ end
+
+ def update
+   @ingredient = Ingredient.find(params[:id])
+   if @ingredient.update_attributes(params[:ingredient])
+     flash[:notice] = 'Sk³adnik apdejtniê!.'
+     redirect_to :action => 'show', :id => @ingredient
+   else
+     render :action => 'edit'
+   end
+ end
 end
 

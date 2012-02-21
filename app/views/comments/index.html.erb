@@ -1,12 +1,7 @@
 
 <img src=<%= asset_path 'titlecomments.png' %> class=localisation />
 <div class="comments">
-  <% @comments.each do |comment| %>
-    <div class="comment"><%= comment.content %></div>
-  <% end %>
-
-
-
+  <%= render @comments %>
 <%= form_for [@commentable, Comment.new] do |form| %>
   <p>
     <%= form.label :content, "tresc komentarza:" %><br />

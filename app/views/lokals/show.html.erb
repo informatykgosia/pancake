@@ -16,15 +16,11 @@
 </div>
   <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
 <div>
-  <% @lokal.comments.each do |comment| %>      
-    <div class="date">
-      <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %>
-    </div>
-    <div class="comment">
-      <%= comment.content %>
-    </div>
-  <%end %>
+  <%= render @lokal.comments %>      
 </div>
 
 <%= link_to image_tag("buttoncomment.png", :alt =>"button_comment", :class => ""), lokal_comments_url(@lokal), :title => "dodaj komentarz" %> 
-<%= link_to '<< Naleśnikarnie', root_url%>
+<%= link_to '<< Naleśnikarnie', root_url %>
+<% if current_user && current_user.login == 'admin' %>
+  <%= link_to 'Edytuj lokal', edit_lokal_path(@lokal) %>
+<% end %>

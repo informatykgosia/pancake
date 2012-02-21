@@ -31,6 +31,24 @@ class PancakesController < ApplicationController
     end
   end
 
+   def edit
+      @pancake = Pancake.find(params[:id])
+   end
+
+    def update
+     @pancake = Pancake.find(params[:id])
+      if @pancake.update_attributes(params[:pancake]) 
+        flash[:notice] = 'Przepis nale¶nikowy zosta³ uaktualniony.'   
+        redirect_to :action => 'show', :id => @pancake
+       else 
+         render :action => 'edit'
+       end
+    end
+
+    def destroy
+      Pancake.find(params[:id]).destroy
+      redirect_to :action => 'list'
+     end
 end
 
 

@@ -44,5 +44,24 @@ class LokalsController < ApplicationController
       format.xml { render :xml => @lokal.to_xml }
     end  
   end
-    
+  
+  def edit
+    @lokal = Lokal.find(params[:id])
+  end
+
+  def update
+  respond_to do |format|
+    if @lokal.update_attributes(params[:lokal])
+      flash[:notice] = 'Uda³o siêdytowaæokal'
+      redirect_to :action => 'show', :id => @lokal
+    else
+      render :action => 'edit'
+    end
+  end
+  end
+  
+  def destroy
+    Lokal.find(params[:id]).destroy
+    redirect_to :action => 'index'
+  end
 end

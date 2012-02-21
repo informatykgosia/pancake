@@ -1,0 +1,11 @@
+<div class="date">
+   <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %>
+ </div>
+ <div class="comment">
+   <%= comment.content %><br />
+   <b> <%= comment.user.login %></b>
+ </div>
+ <% if current_user && current_user.login == 'admin' %>
+   <%= link_to 'edytuj', [:edit, comment.commentable,comment] %>
+ <% end %>
+
