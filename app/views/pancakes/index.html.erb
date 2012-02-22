@@ -1,6 +1,6 @@
 <% content_for :title, "Przepisy" %>
 
-<%= link_to "Nowy przepis", new_pancake_path %>
+<%= link_to image_tag("buttonrecipe.png", :alt =>"button_add_recipe", :class => 'recipe'), new_pancake_path, :title => 'dodaj nowy przepis' %> 
 
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
@@ -9,13 +9,15 @@
 <% @pancakes = Pancake.paginate(:page => params[:page]).order(:cena) %>
 <% @pancakes.each do |pan| %>
   <div class = "pancake">
-    <p> <%= pan.cena %></p>
+    <p> <%= pan.cena %> </p>
     <p> <%= pan.ocena %> </p>
     <p> <%= pan.nazwa %> </p>
     <p> <%= pan.polewa %> </p>
     <p> <%= pan.opis %> </p>
-    <p> <%= pan.ingredients(@nazwa) %> </p>
-  
+
+    <% pan.ingredients.each do |i| %>
+      <%= i.nazwa %>
+    <% end %> 
   </div>
 <% end %>
 
