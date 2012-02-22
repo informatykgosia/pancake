@@ -12,6 +12,14 @@
     <%= @lokal.opis %>
   </div>  
    
+<% if current_user && current_user.login == 'admin' %>
+  <div class="option">
+    <%= link_to 'usuń', @lokal, :confirm => "Na pewno chcesz usunąć lokal?", :method => :delete %>
+  </div>
+  <div class="option">
+    <%= link_to 'edytuj lokal', edit_lokal_path(@lokal) %>
+  </div>
+<% end %>
   
 </div>
   <%= image_tag @lokal.photo_url(:thumb) if @lokal.photo? %>
@@ -20,8 +28,5 @@
 </div>
 
 <%= link_to image_tag("buttoncomment.png", :alt =>"button_comment", :class => ""), lokal_comments_url(@lokal), :title => "dodaj komentarz" %> 
+<br />
 <%= link_to '<< Naleśnikarnie', root_url %>
-<% if current_user && current_user.login == 'admin' %>
-  <%= link_to 'Edytuj lokal', edit_lokal_path(@lokal) %>
-  <%= link_to 'Usun', @lokal, :confirm => "Na pewno chcesz usunac lokal?", :method => :delete %>
-<% end %>

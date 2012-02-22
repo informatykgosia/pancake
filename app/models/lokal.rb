@@ -3,7 +3,7 @@ class Lokal < ActiveRecord::Base
   has_many :comments, :as => :commentable
   has_many :pancakes
 
-  self.per_page= 10;
+  self.per_page= 6;
   validates :nazwa, :adres,  :presence => {:message => 'jest wymaganym polem'}
   mount_uploader :photo, PhotoUploader
 

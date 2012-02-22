@@ -32,7 +32,7 @@
       <ul class="nav">
         <li class=wider><%= link_to  image_tag("nalesnikarnie.png", :alt => "naleśnikarnie", :class =>"nav"), lokals_path, {:title => "nalesnikarnie"} %> </li>
         <li><%= link_to image_tag("przepisy.png", :alt => "przepisy", :class =>"nav"), pancakes_url, :title => "przepisy" %> </li>
-        <li><%= link_to image_tag("zamow.png", :alt =>"zamów", :class =>"nav"), "#", :title => "zamów" %> </li>
+        <li><%= link_to image_tag("zaloga.png", :alt =>"zaloga", :class =>"nav"), crew_url, :title => "zaloga" %> </li>
         <li><%= link_to image_tag("teoria.png", :alt =>"teoria", :class =>"nav"), drpancakes_path , :title => "teoria"  %></li>
       </ul>			
 
@@ -44,8 +44,5 @@
     </div>
     <footer>
     &copy Pancake Corner <%= Time.now.year %>
-  <div> <%= link_to "za³oga", crew_path, :class => "footer" %> </div> 
   </footer>
 </body>
-
-</html>

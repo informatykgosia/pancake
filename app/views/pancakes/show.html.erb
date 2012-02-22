@@ -1,18 +1,30 @@
 <% content_for :title, "Przepisy " %>
-<div class="lokal_show">
-  <div class="lokal_nazwa">
-    <%= @pancake.nazwa %>
+<div class="pancake">
+    <div class="name">
+      <%= @pancake.nazwa %>
+    </div>
+    <div class="info">
+      <b>koszt:</b><i> <%= @pancake.cena %> zl     </i> 
+      <b>polewa:</b><i><%= @pancake.polewa %></i> <br />
+    </div>
+    <p> <%= @pancake.opis %> </p>
+    <div class="ingredients_small">
+      <% @pancake.ingredients.each do |i| %>
+        <i>|<%= i.nazwa %></i>
+      <% end %> 
+    </div>
+  <div class="option">
+    <%= link_to 'edytuj', edit_pancake_path(@pancake) %>
   </div>
-  <div class="lokal_opis">
-    <%= @pancake.opis %>
+  <div class="option">
+    <%= link_to 'usuń', @pancake, :confim => "Na pewno chcesz się pozbyć tego naleśnika?", :method => :delete %>
   </div>
-  <div>
-      <%= render @pancake.comments %>
-  </div>
-  <%= link_to image_tag("buttoncomment.png", :alt => "button_comment", :class => ""), pancake_comments_url(@pancake), :title => "dodaj komentarz" %>
-  <% if current_user && current_user.login == 'admin' %>
-    <%= link_to 'Edytuj', edit_pancake_path(@pancake) %>
-    <%= link_to 'Usun', @pancake, :confim => "Na pewno chcesz sie pozbyc tego nalesnika?", :method => :delete %>
+</div>
+<% if current_user && current_user.login == 'admin' %>
 
 <% end %>
+<div class= "comments">
+  <%= render @pancake.comments %>
+  <%= link_to image_tag("buttoncomment.png", :alt => "button_comment", :class => ""), pancake_comments_url(@pancake), :title => "dodaj komentarz" %>
 
+</div>

@@ -27,7 +27,7 @@
     <%= link_to image_tag("buttontheory.png", :alt =>"button_add_theory", :class => 'newtheory'), new_drpancake_path, :title => 'nową teorię' %> 
 
   <div class = "option">
-    <%= link_to "usun", @theory, :confirm => "Czy na pewno chcesz usunąć tę teorię?",  :method => :delete %>
+    <%= link_to "usuń", @theory, :confirm => "Czy na pewno chcesz usunąć tę teorię?",  :method => :delete %>
   </div>
   <div class = "option">
     <%= link_to "edytuj", edit_drpancake_path(@theory) %>

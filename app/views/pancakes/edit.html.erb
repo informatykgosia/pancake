@@ -1,35 +1,37 @@
-<h1> Edycja nale¶nika </h1>
 <div class=form_new_pancake>
- <%= form_for @pancake do |f| %>
-   <% if @pancake.errors.any? %>
-     <ul>
-       <%= @pancake.errors.full_messages.each do |msg| %>
+  <%= form_for @pancake do |f| %>
+    <% if @pancake.errors.any? %>
+      <ul>
+        <%= @pancake.errors.full_messages.each do |msg| %>
           <li class="error"><%= msg %></li>
-       <% end %>
-    </ul>
-   <% end %>
-   <p>
-   <%= f.label :nazwa, "Nazwa nalesnika:" %>
-   <%= f.text_field :nazwa, :class => 'field' %>
-   </p>
-   <p>
-   <%= f.select :polewa, options_for_select(ICINGS) %>
-   </p>
-   <p>
-   <%= f.label :cena, "Cena:" %>
-   <%= f.number_field :cena, :class => 'field' %>
-   </p>
-   <p>
-   <%= f.label :opis, "Opis" %>
-   <%= f.text_field :opis, :class => 'field' %>
-   </p>
-
-   <% for ingredient in Ingredient.find(:all) %>
-   <p>
-   <%= check_box_tag "pancake[ingredient_ids][]", ingredient.id, @pancake.ingredients.include?(ingredient) %>
-   <%= ingredient.nazwa %>
-   </p>
-   <% end %>
-   <p><%= f.submit "ok", :class => "add_pancake" %></p>
-   <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  <p>  
+  <%= f.label :nazwa, "Nazwa nalesnika:" %>
+  </p>
+  <%= f.text_field :nazwa, :class => 'fieldred' %>
+  <p>
+  <%= f.select :polewa, options_for_select(ICINGS) %>
+  </p>
+<% for ingredient in Ingredient.find(:all) %>
+  <div class="ingredient">
+    <%= check_box_tag "pancake[ingredient_ids][]", ingredient.id, @pancake.ingredients.include?(ingredient) %>
+    <%= ingredient.nazwa %>
+  </div>
+<% end %>
+<br />
+<br />
+  <p>
+  <%= f.label :cena, "Cena:" %>
+  </p>
+  <%= f.number_field :cena, :class => 'fieldred' %>
+  <p>
+  <%= f.label :opis, "Opis:" %>
+  </p>
+  <%= f.text_area :opis, :class => 'areared' %>
+  <p>
+<p><%= f.submit "", :class => "add_recipe" %></p>
+<% end %>
 </div>
+

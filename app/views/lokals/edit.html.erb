@@ -1,27 +1,27 @@
-<h1> Edycja Lokalu</h1>
-  <div class=form_new_local>
+<div class=form_new_local>
   <%= form_for @lokal  do |f| %>
-        <% if @lokal.errors.any? %>
-                <ul>
-     <% @lokal.errors.full_messages.each do |msg| %>                                  <li class="error">!<%= msg %> </li>
-       <% end %>
-     </ul>
-   <% end %>
-   <p>
-   <%= f.label :nazwa, "Nazwa lokalu:" %> <br/>
-   <%= f.text_field :nazwa, :class => 'field' %>
-   </p>
-   <p>
-   <%= f.label :adres, "Adres:" %> <br/>
-   <%= f.text_field :adres, :class => 'field' %>
-   </p>
-   <p>
-   <%= f.label :opis,  "Opis:" %><br/>
-   <%= f.text_area :opis, :class => 'area' %>
-   </p>
-   <p><%= f.submit "", :class => "add_local" %></p>
- <% end %>
- </div>
-  <%= link_to 'pokaz', @lokal %> |
-  <%= link_to 'powrot', lokals_path  %>
+    <% if @lokal.errors.any? %>
+      <ul>
+        <% @lokal.errors.full_messages.each do |msg| %>                     
+          <li class="error">!<%= msg %> </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <p>
+    <%= f.label :nazwa, "Nazwa lokalu:" %> <br/>
+    <%= f.text_field :nazwa, :class => 'field' %>
+    </p>
+    <p>
+    <%= f.label :adres, "Adres:" %> <br/>
+    <%= f.text_field :adres, :class => 'field' %>
+    </p>
+    <p>
+    <%= f.label :opis,  "Opis:" %><br/>
+    <%= f.text_area :opis, :class => 'area' %>
+    </p>
+    <p><%= f.submit "", :class => "add_local" %></p>
+  <% end %>
+</div>
+<%= link_to 'pokaz', @lokal %> |
+<%= link_to 'powrot', lokals_path  %>
 

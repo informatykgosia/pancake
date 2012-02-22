@@ -8,28 +8,30 @@
       </ul>
     <% end %>
   <p>  
-  <%= f.label :nazwa, "Nazwa nalesnika:" %>>
-  <%= f.text_field :nazwa, :class => 'field' %>
+  <%= f.label :nazwa, "nazwa naleśnika:" %>
   </p>
+  <%= f.text_field :nazwa, :class => 'fieldred' %>
   <p>
   <%= f.select :polewa, options_for_select(ICINGS) %>
   </p>
-  <p>
-  <%= f.label :cena, "Cena:" %>
-  <%= f.number_field :cena, :class => 'field' %>
-  </p>
-  <p>
-  <%= f.label :opis, "Opis:" %>
-  <%= f.text_field :opis, :class => 'field' %>
-  </p>
-  <p>
 <% for ingredient in Ingredient.find(:all) %>
-  <p>
+  <div class="ingredient">
     <%= check_box_tag "pancake[ingredient_ids][]", ingredient.id, @pancake.ingredients.include?(ingredient) %>
     <%= ingredient.nazwa %>
-  </p>
+  </div>
 <% end %>
-<p><%= f.submit "ok", :class => "add_pancake" %></p>
+<br />
+<br />
+  <p>
+  <%= f.label :cena, "Cena:" %>
+  </p>
+  <%= f.number_field :cena, :class => 'fieldred' %>
+  <p>
+  <%= f.label :opis, "Opis:" %>
+  </p>
+  <%= f.text_area :opis, :class => 'areared' %>
+  <p>
+<p><%= f.submit "", :class => "add_recipe" %></p>
 <% end %>
 </div>
 
