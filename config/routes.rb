@@ -33,6 +33,7 @@ Projekt::Application.routes.draw do
  resources :pancakes, :has_many => :ingredients 
  resources :pancakes, do
   resources :ingredients
+  resources :comments
  end 
   #resources :lokals
   #match "search" => "lokals#search"

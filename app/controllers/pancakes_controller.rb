@@ -8,7 +8,7 @@ class PancakesController < ApplicationController
 
   def new
     @pancake = Pancake.new
-   # params[:pancake][:ingredient_ids] ||= []
+   params[:pancake][:ingredient_ids] ||= []
   end
 
   def create
@@ -24,7 +24,7 @@ class PancakesController < ApplicationController
   def show 
     @pancake = Pancake.find(params[:id])
     @comment = Comment.new(:commentable => @pancake)
-    @ingredient = Ingredient.find(params[:ids])
+   # @ingredient = Ingredient.find(params[:ids])
 
     respond_to do |format|
       format.html # show.html
@@ -47,7 +47,8 @@ class PancakesController < ApplicationController
     end
 
     def destroy
-      Pancake.find(params[:id]).destroy
+     @pancake =  Pancake.find(params[:id])
+     @pancake.destroy
       redirect_to :action => 'list'
      end
 end

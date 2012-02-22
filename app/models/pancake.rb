@@ -4,6 +4,6 @@ class Pancake < ActiveRecord::Base
   belongs_to :lokal
   
   self.per_page = 10
-  validates :nazwa, :polewa, :cena, :presence => { :message => 'to pole jest wymagane' }
+  validates :nazwa, :polewa, :cena, :opis,  :presence => { :message => 'to pole jest wymagane' }
 
 end

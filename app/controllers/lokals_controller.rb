@@ -57,7 +57,7 @@ class LokalsController < ApplicationController
       
       flash[:notice] = 'Uda³o siêdytowaæokal'
       
-      redirect_to @lokal
+      redirect_to :action => 'show', :id => @lokal
     else
       render :action => 'edit'
     end

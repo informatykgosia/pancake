@@ -8,6 +8,21 @@
        <% end %>
     </ul>
    <% end %>
+   <p>
+   <%= f.label :nazwa, "Nazwa nalesnika:" %>
+   <%= f.text_field :nazwa, :class => 'field' %>
+   </p>
+   <p>
+   <%= f.select :polewa, options_for_select(ICINGS) %>
+   </p>
+   <p>
+   <%= f.label :cena, "Cena:" %>
+   <%= f.number_field :cena, :class => 'field' %>
+   </p>
+   <p>
+   <%= f.label :opis, "Opis" %>
+   <%= f.text_field :opis, :class => 'field' %>
+   </p>
 
    <% for ingredient in Ingredient.find(:all) %>
    <p>
