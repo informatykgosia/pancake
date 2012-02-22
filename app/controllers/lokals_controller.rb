@@ -4,12 +4,13 @@ class LokalsController < ApplicationController
  
   def index
     if params[:query]
-      @lokals = Lokal.search(params[:query]) 
-      case @lokals.count
-        when 0 then render :action => "no_results"
-        when 1 then render :action => "show"
-        when 2..10 then render :action => "show_many"
-      end
+      @lokals = Lokal.search(params[:query])
+     render :action => "index" 
+     # case @lokals.count
+      #  when 0 then render :action => "no_results"
+       # when 1 then render :action => "show"
+        #when 2..10 then render :action => "show_many"
+     # end
     else
       @lokals = Lokal.order("created_at DESC")
     end
@@ -50,10 +51,13 @@ class LokalsController < ApplicationController
   end
 
   def update
+    @lokal = Lokal.find(params[:id])
   respond_to do |format|
     if @lokal.update_attributes(params[:lokal])
+      
       flash[:notice] = 'Uda³o siêdytowaæokal'
-      redirect_to :action => 'show', :id => @lokal
+      
+      redirect_to @lokal
     else
       render :action => 'edit'
     end

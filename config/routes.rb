@@ -46,7 +46,7 @@ Projekt::Application.routes.draw do
   
 
   # krzyczy że nie ma ścieżki wtf
-  post "lokals/search"
+  #post "lokals/search"
   
  # match '/lokals/:id', :to => 'lokals#show'
  # match '/all_lokals', :to => 'users#index'
