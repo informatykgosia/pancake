@@ -52,17 +52,14 @@ class LokalsController < ApplicationController
 
   def update
     @lokal = Lokal.find(params[:id])
-  respond_to do |format|
     if @lokal.update_attributes(params[:lokal])
-      
-      flash[:notice] = 'Uda³o siêdytowaæokal'
-      
-      redirect_to :action => 'show', :id => @lokal
+       flash[:notice] = 'Uda³o siêdytowaæokal'
+       redirect_to :action => 'show', :id => @lokal
     else
       render :action => 'edit'
     end
   end
-  end
+
   
   def destroy
     @lokal = Lokal.find(params[:id])
