@@ -23,4 +23,5 @@
 <%= link_to '<< Naleśnikarnie', root_url %>
 <% if current_user && current_user.login == 'admin' %>
   <%= link_to 'Edytuj lokal', edit_lokal_path(@lokal) %>
+  <%= link_to 'Usun', @lokal, :confirm => "Na pewno chcesz usunac lokal?", :method => :delete %>
 <% end %>

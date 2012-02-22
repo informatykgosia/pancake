@@ -65,7 +65,8 @@ class LokalsController < ApplicationController
   end
   
   def destroy
-    Lokal.find(params[:id]).destroy
+    @lokal = Lokal.find(params[:id])
+    @lokal.destroy
     redirect_to :action => 'index'
   end
 end
