@@ -30,6 +30,10 @@ Projekt::Application.routes.draw do
   match 'crew' => 'pages#crew' 
   root :to => "lokals#index"
   
+ resources :pancakes, :has_many => :ingredients 
+ resources :pancakes, do
+  resources :ingredients
+ end 
   #resources :lokals
   #match "search" => "lokals#search"
   

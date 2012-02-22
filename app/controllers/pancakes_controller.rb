@@ -24,6 +24,7 @@ class PancakesController < ApplicationController
   def show 
     @pancake = Pancake.find(params[:id])
     @comment = Comment.new(:commentable => @pancake)
+    @ingredient = Ingredient.find(params[:ids])
 
     respond_to do |format|
       format.html # show.html

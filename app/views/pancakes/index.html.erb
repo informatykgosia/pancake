@@ -9,7 +9,13 @@
 <% @pancakes = Pancake.paginate(:page => params[:page]).order(:cena) %>
 <% @pancakes.each do |pan| %>
   <div class = "pancake">
-    <%= pan.cena %>
+    <p> <%= pan.cena %></p>
+    <p> <%= pan.ocena %> </p>
+    <p> <%= pan.nazwa %> </p>
+    <p> <%= pan.polewa %> </p>
+    <p> <%= pan.opis %> </p>
+    <p> <%= pan.ingredients(@nazwa) %> </p>
+  
   </div>
 <% end %>
 
