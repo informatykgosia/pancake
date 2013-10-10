@@ -1,6 +1,8 @@
 Projekt::Application.routes.draw do
 
 
+  get "static_pages/home"
+
   # get "drpancakes/destroy"
 
   # get "drpancakes/edit"

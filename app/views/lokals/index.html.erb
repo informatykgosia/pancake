@@ -30,7 +30,7 @@
       <i> <%= lokal.adres %></i>
       <br />
       <div class= "lokal_opis2">
-        <%= truncate(lokal.opis, :length => 150) %>
+        <%= truncate(lokal.opis, :length => 150, :separator => ' ') %>
         <%= link_to ">>>", lokal %>
       </div>
     </div>
